@@ -20,7 +20,7 @@ const ListingGrid: FC<Props> = async ({}) => {
 
   return (
     <div className={styles.listingGrid}>
-      {listings.map((item: any) => (
+      {listings.map((item: any, index: number) => (
         <div key={item._id} className={styles.card}>
           <Image
             src={urlFor(item.image).width(600).height(600).auto("format").url()}
@@ -28,6 +28,7 @@ const ListingGrid: FC<Props> = async ({}) => {
             height={600}
             alt={item.title}
             className={styles.image}
+            priority={index === 0}
           />
           <p className={styles.title}>{item.title}</p>
           <p className={styles.price}>{item.price}</p>
