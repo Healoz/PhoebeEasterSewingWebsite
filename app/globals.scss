@@ -122,34 +122,28 @@ h1 {
   font-size: $font-xl;
   letter-spacing: -4px;
   color: $secondary;
-  line-height: $font-xl;
 
   @include md {
     font-size: $font-2xl;
-    line-height: $font-xl;
   }
 
   @include lg {
     font-size: $font-3xl;
-    line-height: $font-2xl;
   }
 }
 
 h2 {
   font-size: $font-lg;
   font-weight: 400;
-  line-height: $font-xl;
 
   @include md {
     font-size: $font-xl;
-    line-height: $font-lg;
   }
 }
 
 h3 {
   font-size: $font-md;
   font-weight: 400;
-  line-height: $font-lg;
 }
 
 h4 {
