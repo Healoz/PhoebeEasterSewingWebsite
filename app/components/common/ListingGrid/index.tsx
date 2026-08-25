@@ -28,8 +28,8 @@ const ListingGrid: FC<Props> = async ({}) => {
             height={600}
             alt={item.title}
             className={styles.image}
-            priority={index === 0}
-            fetchPriority={index === 0 ? "high" : "auto"}
+            priority={index < 2}
+            fetchPriority={index < 2 ? "high" : "auto"}
             sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 291px"
           />
           <p className={styles.title}>{item.title}</p>
