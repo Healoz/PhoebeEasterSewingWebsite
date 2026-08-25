@@ -1,0 +1,8 @@
+@use "../../../styles/variables" as *;
+
+.button {
+  background-color: $black;
+  display: inline-flex;
+  align-self: flex-start;
+  padding: $spacing-sm;
+}

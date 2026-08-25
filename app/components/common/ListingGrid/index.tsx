@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
+import DepopButton from "../DepopButton";
 
 const LISTINGS_QUERY = `*[_type == "listing"] | order(_createdAt desc){
     _id,
@@ -34,6 +35,7 @@ const ListingGrid: FC<Props> = async ({}) => {
           />
           <p className={styles.title}>{item.title}</p>
           <p className={styles.price}>{item.price}</p>
+          <DepopButton href="https://www.depop.com/" />
         </div>
       ))}
     </div>
