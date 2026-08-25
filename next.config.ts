@@ -1,13 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack(config) {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '../build/polyfills/polyfill-module': false,
-      'next/dist/build/polyfills/polyfill-module': false,
-    }
-    return config
+  turbopack: {
+    resolveAlias: {
+      '../build/polyfills/polyfill-module': './src/lib/modern-polyfill.js',
+      'next/dist/build/polyfills/polyfill-module': './src/lib/modern-polyfill.js',
+    },
   },
   reactCompiler: true,
   experimental: {
