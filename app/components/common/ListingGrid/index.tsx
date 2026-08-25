@@ -11,7 +11,7 @@ const LISTINGS_QUERY = `*[_type == "listing"] | order(_createdAt desc){
     image
 }`;
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 interface Props {}
 
