@@ -2,11 +2,11 @@
 
 .listingGrid {
   background-color: $purple-200;
-  height: 100vh;
+  gap: $spacing-md;
   padding: $spacing-lg;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(1fr, 5);
+  grid-template-columns: repeat(5, 1fr);
 
   .card {
     background-color: $purple-600;
