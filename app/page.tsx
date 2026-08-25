@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <div>
+    <main>
       <h2>Hi there</h2>
       <p>hello</p>
-    </div>
+    </main>
   );
 }
