@@ -23,7 +23,7 @@ const ListingGrid: FC<Props> = async ({}) => {
       {listings.map((item: any, index: number) => (
         <div key={item._id} className={styles.card}>
           <Image
-            src={urlFor(item.image).width(600).height(600).auto("format").url()}
+            src={urlFor(item.image).width(400).height(400).auto("format").url()}
             width={600}
             height={600}
             alt={item.title}
