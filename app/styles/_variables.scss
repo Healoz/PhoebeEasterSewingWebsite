@@ -1,0 +1,97 @@
+// ==== FONT ====
+$font-heading: "Glory", sans-serif;
+$font-primary: "Lato", sans-serif;
+
+// ==== FONT-SIZE ====
+$font-xxs: 12px;
+$font-xs: 14px;
+$font-base: 16px;
+$font-sm: 20px;
+$font-md: 24px;
+$font-lg: 32px;
+$font-xl: 48px;
+$font-2xl: 72px;
+$font-3xl: 96px;
+
+// ==== COLOURS ====
+$purple-800: #20224c;
+$purple-600: #35396a;
+$purple-400: #45498a;
+$purple-200: #7477b3;
+$primary: #8a81f1;
+$white: #edebe4;
+$black: #06030a;
+$black-opacity: #06030a9d;
+$secondary: #f29f41;
+
+// ==== SPACING ====
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xl: 64px;
+$spacing-2xl: 128px;
+$spacing-3xl: 172px;
+
+// ==== LAYOUT ====
+$content-max-width: 1200px;
+$content-padding-mobile: $spacing-md; // 16px
+$content-padding-tablet: $spacing-lg; // 32px
+$content-padding-desktop: $spacing-xl; // 64px
+
+// ==== BORDER ====
+$radius: 5px;
+$border: 1px solid $purple-600;
+$border-bright: 1px solid $primary;
+
+// ==== BREAKPOINTS ====
+$bp-xs: 480px; // Mobile small
+$bp-sm: 640px; // Mobile large
+$bp-md: 768px; // Tablet
+$bp-lg: 1024px; // Desktop small
+$bp-xl: 1280px; // Desktop
+$bp-xxl: 1536px; // Desktop large
+
+// One-off breakpoints for hero parallax
+$bp-hero-fold: 1150px;
+$bp-hero-wide: 1600px;
+
+// ==== MEDIA QUERY MIXINS ====
+// Mobile first — styles apply at breakpoint and UP
+@mixin xs {
+  @media (min-width: $bp-xs) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: $bp-xl) {
+    @content;
+  }
+}
+@mixin xxl {
+  @media (min-width: $bp-xxl) {
+    @content;
+  }
+}
+
+// ==== LAYOUT MIXINS ====
+@mixin col($gap: $spacing-md) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}

@@ -1,0 +1,168 @@
+@use "./styles/variables" as *;
+
+/* ===== CSS RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+main {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $black;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.4;
+  font-family: "Lato", sans-serif;
+}
+
+// reset for form elements
+input,
+textarea,
+select {
+  all: unset;
+  box-sizing: border-box;
+  border: $border-bright;
+  border-radius: $radius;
+  padding: $spacing-md;
+  color: $white;
+
+  &::placeholder {
+    color: $purple-600;
+  }
+}
+
+textarea {
+  height: 150px;
+}
+
+select {
+  appearance: auto;
+}
+
+select option {
+  color: $white;
+  background-color: $black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Glory", sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: $font-xl;
+  letter-spacing: -4px;
+  color: $secondary;
+  line-height: $font-xl;
+
+  @include md {
+    font-size: $font-2xl;
+    line-height: $font-xl;
+  }
+
+  @include lg {
+    font-size: $font-3xl;
+    line-height: $font-2xl;
+  }
+}
+
+h2 {
+  font-size: $font-lg;
+  font-weight: 400;
+  line-height: $font-xl;
+
+  @include md {
+    font-size: $font-xl;
+    line-height: $font-lg;
+  }
+}
+
+h3 {
+  font-size: $font-md;
+  font-weight: 400;
+  line-height: $font-lg;
+}
+
+h4 {
+  font-size: $font-md;
+  line-height: $font-sm;
+
+  @include md {
+    font-size: $font-lg;
+    line-height: $font-md;
+  }
+}
+
+h1,
+h4 {
+  font-weight: 400;
+}
