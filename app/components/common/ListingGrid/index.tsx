@@ -4,13 +4,9 @@ import { client } from "@/sanity/lib/client";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import DepopButton from "../DepopButton";
+import { Listing } from "@/sanity.types";
 
-const LISTINGS_QUERY = `*[_type == "listing"] | order(_createdAt desc){
-    _id,
-    title,
-    price,
-    image
-}`;
+const LISTINGS_QUERY = `*[_type == "listing"] | order(_createdAt desc)`;
 
 export const revalidate = 60;
 
@@ -21,19 +17,23 @@ const ListingGrid: FC<Props> = async ({}) => {
 
   return (
     <div className={styles.listingGrid}>
-      {listings.map((item: any, index: number) => (
+      {listings.map((item: Listing, index: number) => (
         <div key={item._id} className={styles.card}>
           <Image
-            src={urlFor(item.image).width(400).height(400).auto("format").url()}
+            src={urlFor(item.image!)
+              .width(400)
+              .height(400)
+              .auto("format")
+              .url()}
             width={600}
             height={600}
-            alt={item.title}
+            alt={item.name!}
             className={styles.image}
             priority={index < 2}
             fetchPriority={index < 2 ? "high" : "auto"}
             sizes="(max-width: 480px) 50vw, (max-width: 768px) 33vw, 291px"
           />
-          <p className={styles.title}>{item.title}</p>
+          <p className={styles.title}>{item.name ? item.name : "No name"}</p>
           <p className={styles.price}>{item.price}</p>
           <DepopButton href="https://www.depop.com/" />
         </div>

@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "typegen": "sanity schema extract --path=./schema.json && sanity typegen generate",
+    "predev": "npm run typegen",
+    "prebuild": "npm run typegen",
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
@@ -21,6 +24,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^16.3.2",
+    "@sanity/codegen": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

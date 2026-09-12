@@ -6,10 +6,15 @@ export default defineType({
     type: 'document',
     fields: [
         defineField({
-            name: 'title',
-            title: 'Title',
+            name: 'name',
+            title: 'Name',
             type: 'string',
             validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'shortName',
+            title: 'Short Name',
+            type: 'string',
         }),
         defineField({
             name: 'image',
@@ -24,11 +29,24 @@ export default defineType({
             type: 'number',
             validation: (Rule) => Rule.required().positive(),
         }),
+        defineField({
+            name: 'isSold',
+            title: 'Is Sold',
+            type: 'boolean',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'depopUrl',
+            title: 'Depop Url',
+            type: 'string',
+            validation: (Rule) => Rule.required(),
+        }),
+        
     ],
     preview: {
-        select: { title: 'title', media: 'image', subtitle: 'price'},
-        prepare({ title, media, subtitle}: {title?: string; media?: any; subtitle?: number}) {
-            return { title, media, subtitle: subtitle ? `$${subtitle}` : ''}
+        select: { title: 'name', media: 'image', subtitle: 'price', isSold: 'isSold'},
+        prepare({ title, media, subtitle, isSold}: {title?: string; media?: any; subtitle?: number; isSold?: boolean}) {
+            return { title: isSold ? `[SOLD] ${title}` : title, media, subtitle: subtitle ? `$${subtitle}` : ''}
         }
     }
 })
