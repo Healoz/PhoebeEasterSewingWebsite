@@ -15,6 +15,27 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type ListingReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "listing";
+};
+
+export type Drop = {
+  _id: string;
+  _type: "drop";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  isActive?: boolean;
+  listingIds?: Array<
+    {
+      _key: string;
+    } & ListingReference
+  >;
+};
+
 export type SanityImageAssetReference = {
   _ref: string;
   _type: "reference";
@@ -162,6 +183,8 @@ export type Slug = {
 };
 
 export type AllSanitySchemaTypes =
+  | ListingReference
+  | Drop
   | SanityImageAssetReference
   | Listing
   | SanityImageCrop
