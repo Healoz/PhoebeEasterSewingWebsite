@@ -15,6 +15,46 @@
 export declare const internalGroqTypeReferenceTo: unique symbol;
 
 // Source: schema.json
+export type SanityImageAssetReference = {
+  _ref: string;
+  _type: "reference";
+  _weak?: boolean;
+  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+};
+
+export type DesignImage = {
+  _id: string;
+  _type: "designImage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  image?: {
+    asset?: SanityImageAssetReference;
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  altText?: string;
+  imageCode?: string;
+};
+
+export type SanityImageCrop = {
+  _type: "sanity.imageCrop";
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+};
+
+export type SanityImageHotspot = {
+  _type: "sanity.imageHotspot";
+  x?: number;
+  y?: number;
+  height?: number;
+  width?: number;
+};
+
 export type ListingReference = {
   _ref: string;
   _type: "reference";
@@ -36,13 +76,6 @@ export type Drop = {
   >;
 };
 
-export type SanityImageAssetReference = {
-  _ref: string;
-  _type: "reference";
-  _weak?: boolean;
-  [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-};
-
 export type Listing = {
   _id: string;
   _type: "listing";
@@ -61,22 +94,6 @@ export type Listing = {
   price?: number;
   isSold?: boolean;
   depopUrl?: string;
-};
-
-export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
-  top?: number;
-  bottom?: number;
-  left?: number;
-  right?: number;
-};
-
-export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
-  x?: number;
-  y?: number;
-  height?: number;
-  width?: number;
 };
 
 export type SanityImagePaletteSwatch = {
@@ -183,12 +200,13 @@ export type Slug = {
 };
 
 export type AllSanitySchemaTypes =
-  | ListingReference
-  | Drop
   | SanityImageAssetReference
-  | Listing
+  | DesignImage
   | SanityImageCrop
   | SanityImageHotspot
+  | ListingReference
+  | Drop
+  | Listing
   | SanityImagePaletteSwatch
   | SanityImagePalette
   | SanityImageDimensions

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "typegen": "sanity schema extract --path=./schema.json && sanity typegen generate",
+    "typegen": "sanity schema extract --path=./schema.json --force && sanity typegen generate",
     "predev": "npm run typegen",
     "prebuild": "npm run typegen",
     "dev": "next dev --webpack",
