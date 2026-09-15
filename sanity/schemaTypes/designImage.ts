@@ -22,6 +22,9 @@ export default defineType({
             name: 'imageCode',
             title: 'Image Code',
             type: 'string',
+            readOnly: ({document}) => {
+                return Boolean(document?._id && !document._id.startsWith('drafts.'));
+            },
         }),
     ],
     preview: {
