@@ -1,0 +1,21 @@
+@use "../../../styles/variables" as *;
+
+.hero {
+  background-color: $brown;
+  min-height: 100vh;
+  position: relative;
+
+  .backgroundElements {
+    @include absolute-overlay;
+
+    .decorativeImageWrapper:nth-child(1) {
+      height: 20rem;
+      background-color: blue;
+      @include grid-span(3, 1);
+    }
+  }
+
+  .foregroundElements {
+    @include absolute-overlay;
+  }
+}

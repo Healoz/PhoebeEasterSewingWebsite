@@ -1,9 +1,9 @@
-import ListingGrid from "./components/common/ListingGrid";
+import Hero from "./components/common/Hero";
 
 export default function Home() {
   return (
     <main>
-      <ListingGrid />
+      <Hero />
     </main>
   );
 }

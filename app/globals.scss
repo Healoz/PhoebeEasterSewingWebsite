@@ -92,7 +92,7 @@ select {
   color: $white;
 
   &::placeholder {
-    color: $purple-600;
+    color: $brown;
   }
 }
 
@@ -106,7 +106,7 @@ select {
 
 select option {
   color: $white;
-  background-color: $black;
+  background-color: $brown;
 }
 
 h1,
@@ -121,7 +121,7 @@ h1 {
   text-transform: uppercase;
   font-size: $font-xl;
   letter-spacing: -4px;
-  color: $secondary;
+  color: $green;
 
   @include md {
     font-size: $font-2xl;
@@ -159,4 +159,19 @@ h4 {
 h1,
 h4 {
   font-weight: 400;
+}
+
+:root {
+  --grid-cols: #{$grid-mobile-cols};
+  --grid-margin: #{$grid-mobile-margin};
+  --grid-gutter: #{$grid-mobile-gutter};
+  --grid-max-width: #{$content-max-width};
+}
+
+@include lg {
+  :root {
+    --grid-cols: #{$grid-desktop-cols};
+    --grid-margin: #{$grid-desktop-margin};
+    --grid-gutter: #{$grid-desktop-gutter};
+  }
 }

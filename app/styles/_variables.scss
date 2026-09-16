@@ -14,15 +14,10 @@ $font-2xl: 72px;
 $font-3xl: 96px;
 
 // ==== COLOURS ====
-$purple-800: #20224c;
-$purple-600: #35396a;
-$purple-400: #45498a;
-$purple-200: #7477b3;
-$primary: #8a81f1;
-$white: #edebe4;
-$black: #06030a;
-$black-opacity: #06030a9d;
-$secondary: #f29f41;
+$white: #fff8e7;
+$brown: #331917;
+$green: #767c42;
+$pink: #edccbe;
 
 // ==== SPACING ====
 $spacing-xs: 4px;
@@ -35,14 +30,20 @@ $spacing-3xl: 172px;
 
 // ==== LAYOUT ====
 $content-max-width: 1200px;
-$content-padding-mobile: $spacing-md; // 16px
-$content-padding-tablet: $spacing-lg; // 32px
-$content-padding-desktop: $spacing-xl; // 64px
+
+//  ==== GRID ====
+$grid-mobile-cols: 4;
+$grid-mobile-margin: 24px;
+$grid-mobile-gutter: 16px;
+
+$grid-desktop-cols: 12;
+$grid-desktop-margin: 56px;
+$grid-desktop-gutter: 20px;
 
 // ==== BORDER ====
 $radius: 5px;
-$border: 1px solid $purple-600;
-$border-bright: 1px solid $primary;
+$border: 1px solid $brown;
+$border-bright: 1px solid $brown;
 
 // ==== BREAKPOINTS ====
 $bp-xs: 480px; // Mobile small
@@ -94,4 +95,35 @@ $bp-hero-wide: 1600px;
   display: flex;
   flex-direction: column;
   gap: $gap;
+}
+
+@mixin absolute-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@mixin grid-container($cols, $margin, $gutter) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  column-gap: $gutter;
+  padding-inline: $margin;
+  max-width: $content-max-width;
+  margin-inline: auto;
+}
+
+@mixin grid-span($span, $extra-gutters: 0) {
+  --grid-container: min(100vw, var(--grid-max-width));
+  --grid-inner: calc(var(--grid-container) - (var(--grid-margin) * 2));
+  --grid-col: calc(
+    (var(--grid-inner) - (var(--grid-gutter) * (var(--grid-cols) - 1))) /
+      var(--grid-cols)
+  );
+
+  width: calc(
+    (var(--grid-col) * #{$span}) + (var(--grid-gutter) * (#{$span} - 1)) +
+      (var(--grid-gutter) * #{$extra-gutters})
+  );
 }

@@ -1,7 +1,7 @@
 @use "../../../styles/variables" as *;
 
 .listingGrid {
-  background-color: $purple-600;
+  background-color: $brown;
   gap: $spacing-md;
   padding: $spacing-lg;
   width: 100%;
@@ -27,7 +27,7 @@
       height: auto;
       object-fit: cover;
       border-radius: $radius;
-      background-color: $black-opacity;
+      background-color: $brown;
     }
 
     .title {
