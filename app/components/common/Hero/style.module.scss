@@ -9,9 +9,21 @@
     @include absolute-overlay;
 
     .decorativeImageWrapper:nth-child(1) {
-      height: 20rem;
+      height: 50%;
+      top: 20%;
       background-color: blue;
       @include grid-span(3, 1);
+      position: absolute;
+      right: 0;
+
+      @include md {
+        @include grid-span(4, 1);
+      }
+
+      @include lg {
+        @include grid-span(7);
+        margin-right: $grid-desktop-margin;
+      }
     }
   }
 

@@ -168,6 +168,14 @@ h4 {
   --grid-max-width: #{$content-max-width};
 }
 
+@include md {
+  :root {
+    --grid-cols: #{$grid-tablet-cols};
+    --grid-margin: #{$grid-tablet-margin};
+    --grid-gutter: #{$grid-tablet-gutter};
+  }
+}
+
 @include lg {
   :root {
     --grid-cols: #{$grid-desktop-cols};

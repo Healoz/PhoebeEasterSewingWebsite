@@ -29,12 +29,16 @@ $spacing-2xl: 128px;
 $spacing-3xl: 172px;
 
 // ==== LAYOUT ====
-$content-max-width: 1200px;
+$content-max-width: 1600px;
 
 //  ==== GRID ====
 $grid-mobile-cols: 4;
 $grid-mobile-margin: 24px;
 $grid-mobile-gutter: 16px;
+
+$grid-tablet-cols: 6;
+$grid-tablet-margin: 40px;
+$grid-tablet-gutter: 18px;
 
 $grid-desktop-cols: 12;
 $grid-desktop-margin: 56px;
@@ -114,7 +118,10 @@ $bp-hero-wide: 1600px;
   margin-inline: auto;
 }
 
-@mixin grid-span($span, $extra-gutters: 0) {
+// ==== SPAN-WIDTH MIXIN ====
+// $span = how many columns this element should occupy
+// $extra-margins = how many margin-widths to add on top (e.g. 1 = bleeds flush to viewport edge)
+@mixin grid-span($span, $extra-margins: 0) {
   --grid-container: min(100vw, var(--grid-max-width));
   --grid-inner: calc(var(--grid-container) - (var(--grid-margin) * 2));
   --grid-col: calc(
@@ -124,6 +131,6 @@ $bp-hero-wide: 1600px;
 
   width: calc(
     (var(--grid-col) * #{$span}) + (var(--grid-gutter) * (#{$span} - 1)) +
-      (var(--grid-gutter) * #{$extra-gutters})
+      (var(--grid-margin) * #{$extra-margins})
   );
 }
