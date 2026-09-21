@@ -25,6 +25,22 @@
         margin-right: $grid-desktop-margin;
       }
     }
+
+    .decorativeImageWrapper:nth-child(2) {
+      background-color: blue;
+      @include grid-span(3);
+      height: 32vh;
+      position: absolute;
+      bottom: -173px;
+      left: $grid-mobile-margin;
+      z-index: 2;
+
+      @include lg {
+        left: grid-span(1, 1);
+        height: 45vh;
+        bottom: -130px;
+      }
+    }
   }
 
   .foregroundElements {

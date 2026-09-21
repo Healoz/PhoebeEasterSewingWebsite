@@ -121,16 +121,26 @@ $bp-hero-wide: 1600px;
 // ==== SPAN-WIDTH MIXIN ====
 // $span = how many columns this element should occupy
 // $extra-margins = how many margin-widths to add on top (e.g. 1 = bleeds flush to viewport edge)
-@mixin grid-span($span, $extra-margins: 0) {
+// Declares the custom props the calc depends on
+@mixin set-grid-vars {
   --grid-container: min(100vw, var(--grid-max-width));
   --grid-inner: calc(var(--grid-container) - (var(--grid-margin) * 2));
   --grid-col: calc(
     (var(--grid-inner) - (var(--grid-gutter) * (var(--grid-cols) - 1))) /
       var(--grid-cols)
   );
+}
 
-  width: calc(
+// Returns a value — usable inside any property
+@function grid-span($span, $extra-margins: 0) {
+  @return calc(
     (var(--grid-col) * #{$span}) + (var(--grid-gutter) * (#{$span} - 1)) +
       (var(--grid-margin) * #{$extra-margins})
   );
+}
+
+// Existing mixin, now just wraps the function for `width`
+@mixin grid-span($span, $extra-margins: 0) {
+  @include set-grid-vars;
+  width: grid-span($span, $extra-margins);
 }
