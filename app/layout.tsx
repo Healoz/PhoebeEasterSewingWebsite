@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Archivo } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.scss";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const harmond = localFont({
+  src: "./fonts/Harmond-SemBdItaCond.woff2",
+  variable: "--font-harmond",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const archivo = Archivo({
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-archivo",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${harmond.variable} ${archivo.variable}`}>
       <body>{children}</body>
       <Analytics />
     </html>

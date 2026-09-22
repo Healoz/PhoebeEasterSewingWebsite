@@ -10,7 +10,11 @@ const Hero: FC<Props> = ({}) => {
         <div className={styles.decorativeImageWrapper}></div>
         <div className={styles.decorativeImageWrapper}></div>
       </div>
-      <div className={styles.foregroundElements}></div>
+      <div className={styles.foregroundElements}>
+        <h2>Discover your</h2>
+        <h1>One-Of-A-Kind</h1>
+        <h2>Handmade wardrobe holy grail.</h2>
+      </div>
     </section>
   );
 };
