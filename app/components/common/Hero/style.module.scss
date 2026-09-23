@@ -45,5 +45,43 @@
 
   .foregroundElements {
     @include absolute-overlay;
+    padding: $grid-mobile-margin;
+
+    @include md {
+      padding: $grid-tablet-margin;
+    }
+
+    .headingWrapper {
+      @include col;
+      margin-top: 22vh;
+
+      h1 {
+        line-height: 23vw;
+        font-size: 30vw;
+        color: $pink;
+        text-shadow: 4px 2px 0px $brown;
+
+        .mobileBreak {
+          @include md {
+            display: none;
+          }
+        }
+
+        @include md {
+          font-size: 19vw;
+          line-height: 17vw;
+        }
+      }
+
+      h2 {
+        font-size: 20px;
+        color: $white;
+        max-width: 60vw;
+
+        @include md {
+          font-size: $font-md;
+        }
+      }
+    }
   }
 }

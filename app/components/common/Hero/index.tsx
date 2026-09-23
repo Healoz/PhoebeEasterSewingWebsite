@@ -11,9 +11,15 @@ const Hero: FC<Props> = ({}) => {
         <div className={styles.decorativeImageWrapper}></div>
       </div>
       <div className={styles.foregroundElements}>
-        <h2>Discover your</h2>
-        <h1>One-Of-A-Kind</h1>
-        <h2>Handmade wardrobe holy grail.</h2>
+        <div className={styles.headingWrapper}>
+          <h2>Discover your</h2>
+          <h1>
+            One-Of-
+            <br className={styles.mobileBreak} />
+            A-Kind
+          </h1>
+          <h2>Handmade wardrobe holy grail.</h2>
+        </div>
       </div>
     </section>
   );
