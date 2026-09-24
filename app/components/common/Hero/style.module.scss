@@ -51,9 +51,18 @@
       padding: $grid-tablet-margin;
     }
 
+    @include lg {
+      padding: grid-span(1, 1);
+    }
+
     .headingWrapper {
       @include col;
       margin-top: 22vh;
+      background-color: red;
+
+      @include md {
+        margin-top: 8vh;
+      }
 
       h1 {
         line-height: 23vw;
@@ -68,8 +77,13 @@
         }
 
         @include md {
-          font-size: 19vw;
-          line-height: 17vw;
+          font-size: 17vw;
+          line-height: 16vw;
+        }
+
+        @include lg {
+          font-size: 16vw;
+          line-height: 15vw;
         }
       }
 
@@ -80,6 +94,14 @@
 
         @include md {
           font-size: $font-md;
+          max-width: unset;
+        }
+      }
+
+      h2:nth-child(3) {
+        @include md {
+          background-color: green;
+          text-align: right;
         }
       }
     }

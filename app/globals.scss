@@ -167,6 +167,7 @@ h4 {
   --grid-margin: #{$grid-mobile-margin};
   --grid-gutter: #{$grid-mobile-gutter};
   --grid-max-width: #{$content-max-width};
+  @include set-grid-vars;
 }
 
 @include md {

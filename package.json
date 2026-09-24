@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "typegen": "sanity schema extract --path=./schema.json --force && sanity typegen generate",
-    "predev": "npm run typegen",
-    "prebuild": "npm run typegen",
+    "predev": "npm run",
+    "prebuild": "npm run",
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
