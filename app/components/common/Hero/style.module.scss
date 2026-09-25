@@ -1,107 +1,121 @@
 @use "../../../styles/variables" as *;
 
-.hero {
-  background-color: $brown;
-  min-height: 100vh;
-  position: relative;
+.heroWrapper {
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // background-color: $brown;
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    max-width: $content-max-width;
+    margin-inline: auto;
+    width: 100%;
+    background-color: $brown;
 
-  .backgroundElements {
-    @include absolute-overlay;
+    .backgroundElements {
+      @include absolute-overlay;
 
-    .decorativeImageWrapper:nth-child(1) {
-      height: 50%;
-      top: 20%;
-      background-color: blue;
-      @include grid-span(3, 1);
-      position: absolute;
-      right: 0;
-
-      @include md {
-        @include grid-span(4, 1);
-      }
-
-      @include lg {
-        @include grid-span(7);
-        margin-right: $grid-desktop-margin;
-      }
-    }
-
-    .decorativeImageWrapper:nth-child(2) {
-      background-color: blue;
-      @include grid-span(3);
-      height: 32vh;
-      position: absolute;
-      bottom: -173px;
-      left: $grid-mobile-margin;
-      z-index: 2;
-
-      @include lg {
-        left: grid-span(1, 1);
-        height: 45vh;
-        bottom: -130px;
-      }
-    }
-  }
-
-  .foregroundElements {
-    @include absolute-overlay;
-    padding: $grid-mobile-margin;
-
-    @include md {
-      padding: $grid-tablet-margin;
-    }
-
-    @include lg {
-      padding: grid-span(1, 1);
-    }
-
-    .headingWrapper {
-      @include col;
-      margin-top: 22vh;
-      background-color: red;
-
-      @include md {
-        margin-top: 8vh;
-      }
-
-      h1 {
-        line-height: 23vw;
-        font-size: 30vw;
-        color: $pink;
-        text-shadow: 4px 2px 0px $brown;
-
-        .mobileBreak {
-          @include md {
-            display: none;
-          }
-        }
+      .decorativeImageWrapper:nth-child(1) {
+        height: 50%;
+        top: 20%;
+        background-color: blue;
+        @include grid-span(3, 1);
+        position: absolute;
+        right: 0;
 
         @include md {
-          font-size: 17vw;
-          line-height: 16vw;
+          @include grid-span(4, 1);
         }
 
         @include lg {
-          font-size: 16vw;
-          line-height: 15vw;
+          @include grid-span(7);
+          margin-right: $grid-desktop-margin;
         }
       }
 
-      h2 {
-        font-size: 20px;
-        color: $white;
-        max-width: 60vw;
+      .decorativeImageWrapper:nth-child(2) {
+        background-color: blue;
+        @include grid-span(3);
+        height: 32vh;
+        position: absolute;
+        bottom: -173px;
+        left: $grid-mobile-margin;
+        z-index: 2;
 
-        @include md {
-          font-size: $font-md;
-          max-width: unset;
+        @include lg {
+          left: grid-span(1, 1);
+          height: 45vh;
+          bottom: -130px;
         }
       }
+    }
 
-      h2:nth-child(3) {
+    .foregroundElements {
+      @include absolute-overlay;
+      padding: $grid-mobile-margin;
+
+      @include md {
+        padding: $grid-tablet-margin;
+      }
+
+      @include lg {
+        padding: grid-span(1, 1);
+      }
+
+      .headingWrapper {
+        @include col;
+        margin-top: 22vh;
+        background-color: red;
+
         @include md {
-          background-color: green;
-          text-align: right;
+          margin-top: 8vh;
+        }
+
+        h1 {
+          line-height: 23vw;
+          font-size: 30vw;
+          color: $pink;
+          text-shadow: 4px 2px 0px $brown;
+
+          .mobileBreak {
+            @include md {
+              display: none;
+            }
+          }
+
+          @include md {
+            font-size: 17vw;
+            line-height: 16vw;
+          }
+
+          @include lg {
+            font-size: 16vw;
+            line-height: 15vw;
+          }
+
+          @include xxl {
+            font-size: 260px;
+            line-height: 250px;
+          }
+        }
+
+        h2 {
+          font-size: 20px;
+          color: $white;
+          max-width: 60vw;
+
+          @include md {
+            font-size: $font-md;
+            max-width: unset;
+          }
+        }
+
+        h2:nth-child(3) {
+          @include md {
+            background-color: green;
+            text-align: right;
+          }
         }
       }
     }

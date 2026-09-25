@@ -29,7 +29,7 @@ $spacing-2xl: 128px;
 $spacing-3xl: 172px;
 
 // ==== LAYOUT ====
-$content-max-width: 1600px;
+$content-max-width: 1800px;
 
 //  ==== GRID ====
 $grid-mobile-cols: 4;
@@ -56,10 +56,6 @@ $bp-md: 768px; // Tablet
 $bp-lg: 1024px; // Desktop small
 $bp-xl: 1280px; // Desktop
 $bp-xxl: 1536px; // Desktop large
-
-// One-off breakpoints for hero parallax
-$bp-hero-fold: 1150px;
-$bp-hero-wide: 1600px;
 
 // ==== MEDIA QUERY MIXINS ====
 // Mobile first — styles apply at breakpoint and UP
