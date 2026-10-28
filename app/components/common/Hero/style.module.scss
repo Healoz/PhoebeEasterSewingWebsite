@@ -2,9 +2,6 @@
 
 .heroWrapper {
   display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // background-color: $brown;
   .hero {
     min-height: 100vh;
     position: relative;
@@ -18,7 +15,7 @@
 
       .decorativeImageWrapper:nth-child(1) {
         height: 50%;
-        top: 20%;
+        top: 13%;
         background-color: blue;
         @include grid-span(3, 1);
         position: absolute;
@@ -83,7 +80,7 @@
 
       .headingWrapper {
         grid-column: span $grid-mobile-cols;
-        grid-row: 4 / span 5;
+        grid-row: 3 / span 5;
         @include col;
 
         h2 {
@@ -93,9 +90,19 @@
 
         h1 {
           font-size: 32vw;
-          line-height: 27vw;
+          line-height: 26vw;
           color: $pink;
           text-shadow: $brown 3px 3px;
+
+          @include sm {
+            font-size: 25vw;
+            line-height: 19vw;
+          }
+
+          @include md {
+            font-size: 20vw;
+            line-height: 18vw;
+          }
         }
       }
 
@@ -104,6 +111,7 @@
         grid-column: span 3;
         grid-row: 9 / span 2;
         @include col;
+        gap: $spacing-lg;
       }
     }
   }

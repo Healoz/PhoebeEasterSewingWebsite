@@ -5,4 +5,12 @@
   display: inline-flex;
   align-self: flex-start;
   padding: $spacing-sm;
+  @include grid-span(3);
+  height: $spacing-xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  font-weight: 600;
+  letter-spacing: 6%;
 }
