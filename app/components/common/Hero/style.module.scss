@@ -83,6 +83,14 @@
         grid-row: 3 / span 5;
         @include col;
 
+        @include md {
+          grid-column: span $grid-tablet-cols;
+        }
+
+        @include lg {
+          grid-column: 2 / span 10;
+        }
+
         h2 {
           color: $white;
           font-size: $font-md;
@@ -100,8 +108,22 @@
           }
 
           @include md {
-            font-size: 20vw;
-            line-height: 18vw;
+            font-size: 17vw;
+            line-height: 15vw;
+
+            .mobileBreak {
+              display: none;
+            }
+          }
+
+          @include lg {
+            font-size: 15vw;
+            line-height: 13vw;
+          }
+
+          @include xl {
+            font-size: 14vw;
+            line-height: 10vw;
           }
         }
       }
